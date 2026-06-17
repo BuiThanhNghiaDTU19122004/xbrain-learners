@@ -5,4 +5,4 @@
 - [Submission Form — Online Training: Security (2026-06-17)](https://shorturl.at/vXSwz) — Thực hiện trong quá trình tham gia lớp học Online CDO_Security và hoàn thành ngay khi lớp học kết thúc.
 
 ## Soft Skills
-- [Survey Form — Online Training: Self-Learning Skills (2026-06-17)](https://shorturl.at/5TgBA) — Deadline: 15h00 Thứ 4, 17/06/2026
+- [Survey Form — Online Training: Self-Learning Skills (2026-06-17)](https://shorturl.at/5TgBA) — Deadline: 17h00 Thứ 4, 17/06/2026
