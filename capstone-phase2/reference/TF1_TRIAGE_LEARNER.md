@@ -80,6 +80,8 @@ Engineer chỉ **confirm + act**, không dig from zero. Đặc biệt: **KHÔNG 
 - **Cost ceiling**: Bedrock invocation budget, AWS demo cap, production projection.
 - **Eval data**: synthetic OK hay phải real, ai validate test set.
 - **Curveball-readiness**: nếu Client thêm severity classify, region switch, schema change - system flex được không.
+- **Hard NEVER boundary** (pattern chung): TF1 đã chốt no auto-remediation - còn ranh giới nào Client muốn cứng nữa (vd AI không tự close ticket, không tự ping ngoài giờ, không touch resource nào)?
+- **Acceptance ownership** (pattern chung): ai định nghĩa "diagnose đúng" + ngưỡng confidence để chuyển INVESTIGATE thay vì đoán, ai ký duyệt target MTTA/MTTR - client hay team.
 
 ## Trước khi vào phòng họp T2 W11
 

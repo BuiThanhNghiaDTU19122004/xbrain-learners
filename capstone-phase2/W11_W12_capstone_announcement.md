@@ -192,6 +192,14 @@ Trước khi vào phòng họp Client, mỗi bạn cần:
 - Đọc kỹ file đề tài team mình bốc.
 - Chuẩn bị sẵn 10-15 câu hỏi specific. Dùng 5W2H làm khung, đừng improvise hỏi linh tinh. "Anh muốn gì" là câu hỏi tệ nhất.
 
+### 3 câu hỏi mọi task force đều phải đào (safety-net chung)
+
+Danh mục clarify trong mỗi `TFx_*_LEARNER.md` là phần **TF-specific**. Ngoài ra, **bất kỳ engine nào hành động hoặc recommend** đều phải clarify 3 mảng universal dưới đây - thiếu là hổng dù bốc đề nào:
+
+1. **Hard NEVER boundary** - "Engine tuyệt đối KHÔNG được làm gì / không được động vào tài nguyên nào?" Mọi hệ có action (containment, self-heal) hoặc chỉ recommend (diagnose, predict) đều cần ranh giới cứng này, viết vào doc + client xác nhận. (TF2 đã có sẵn 3 NEVER; các đề khác phải tự đào.)
+2. **Acceptance ownership** - "Ai định nghĩa success metric + threshold cho từng scenario, và ai ký duyệt - client hay team?" Đề nào cũng có metric (MTTA/MTTR, precision/FP, auto-resolve rate, lead time) nhưng phải chốt **ai sở hữu định nghĩa**. Mặc định nên là: team đề xuất (signal + threshold + cửa sổ đo), client validate nó map đúng "recovery thật". Đây là chỗ chấm trade-off justification.
+3. **Definition-of-done + latency budget** - "'Xong/đúng' nghĩa chính xác là gì, đo trong cửa sổ bao lâu, và end-to-end mất tối đa bao nhiêu?" "Resolved/detected" phải là trạng thái mục tiêu **giữ ổn định trong một window**, không phải "lệnh vừa chạy xong" - kèm SLA thời gian từ trigger đến khi xong.
+
 ---
 
 ## Activity Tracking trên Jira (bắt buộc)
