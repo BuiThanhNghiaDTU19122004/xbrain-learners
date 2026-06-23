@@ -111,6 +111,8 @@ Build **Foresight Lens** - system proactive:
 - **Conflict handling**: 2 service đề xuất scale conflict, surface cả 2 hay resolve.
 - **Seasonality**: daily/weekly pattern, business hours vs weekend, holiday.
 - **Onboarding**: time per new service từ register đến baseline ready.
+- **Hard NEVER boundary** (pattern chung): TF4 đã chốt predict + recommend, no auto-remediation - còn gì engine tuyệt đối KHÔNG được làm (vd không tự apply scale, không touch resource/service nào)?
+- **Acceptance ownership** (pattern chung): ai định nghĩa "catch đúng drift" + ngưỡng (FP ≤12%, catch ≥80%, lead ≥15min), ai ký duyệt - client hay team.
 
 ## Trước khi vào phòng họp T2 W11
 
