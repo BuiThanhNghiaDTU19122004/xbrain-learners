@@ -10,7 +10,7 @@ Anh nói trước cho cả nhà đỡ ngợp: capstone không giống mấy tu�
 
 Cách mình tổ chức: chia thành 4 task force độc lập, mỗi task force build một sản phẩm AIOps riêng. Mỗi task force gồm 1 nhóm AI + 2 hoặc 3 nhóm Cloud/DevOps cùng làm:
 
-- **Nhóm AI** (4 nhóm AIO-01..04) Các bạn own đề tài, thiết kế AI engine, viết 3 contracts cho CDO consume, rồi deploy engine cho 2-3 CDO trong task force dùng chung.
+- **Nhóm AI** (4 nhóm AIO-01..04) Các bạn own đề tài, thiết kế AI engine, viết 3 contracts cho CDO consume, rồi **giao engine (artifact + Deployment Contract) cho 2-3 CDO trong task force tự deploy lên platform riêng** - không host hộ. (Riêng T5 W11 → đầu W12, AI deploy thêm 1 skeleton endpoint chung để CDO integrate sớm; xem mục Mitigation.)
 - **Nhóm Cloud/DevOps** (9 nhóm CDO-01..09) Mỗi nhóm build infra hosting AI engine theo góc nhìn riêng (serverless, K8s, streaming, lakehouse, vv...). Trong task force, 2-3 CDO cùng đề nhưng compete trên execution quality.
 
 Bốn task force không liên quan gì nhau cả. TF1 không cần care TF2 làm gì. Mỗi task force là một sản phẩm hoàn chỉnh đứng riêng.
@@ -128,29 +128,29 @@ CDO build platform infra theo spec này **mà không cần AI engine chạy th�
 
 **Nhưng W12 T3 integration session**: CDO PHẢI call AI endpoint THẬT (không mock nữa) để test E2E. Đây là chỗ dependency thật xuất hiện.
 
-### Mitigation: AI deploy skeleton T5 chiều, CDO có endpoint thật từ T6
+### Mitigation: AI deploy 1 skeleton chung T5 để bootstrap, W12 mỗi CDO host engine thật
 
-Để CDO không phải đợi AI logic complete, AI nhóm deploy **engine skeleton** ngay T5 W11 chiều (cùng lúc với ký contract):
+Để CDO không phải đợi AI logic complete, AI nhóm deploy **một engine skeleton dùng chung** ngay T5 W11 chiều (cùng lúc với ký contract). Đây là **giàn giáo tạm để integrate sớm**, KHÔNG phải nơi engine sống cuối cùng:
 
 - Lambda/Fargate task minimal với **dummy logic**: return hardcoded JSON đúng schema (vd luôn trả `{anomaly: true, severity: 0.7, confidence: 0.85, reasoning: "skeleton response"}`).
-- Endpoint URL fix, accessible từ CDO subnet trong task force.
-- Logic bên trong sẽ replace dần trong W12 bằng real AI inference.
+- Một endpoint URL chung, accessible từ CDO subnet - để CDO có cái gọi mà build + integrate code path trước.
+- AIO hoàn thiện real inference song song; W12 đóng gói engine thành **artifact (image/code) + Deployment Contract** để bàn giao.
 
-→ Từ T6 W11, CDO có endpoint thật để call. Không depend AI logic finished.
-→ W12 AI thay dummy bằng real inference + safety guards + multi-tenant routing. Endpoint URL không đổi, schema không đổi.
-→ W12 T3 integration session: CDO call endpoint thật, response thật, eval E2E.
+→ Từ T6 W11, CDO có skeleton chung để call. Không depend AI logic finished.
+→ **W12: mỗi CDO deploy engine THẬT lên platform riêng của mình** (theo Deployment Contract) - đây chính là "deployed trên 2-3 CDO platform" mà rubric chấm, và là chỗ 2-3 CDO compete execution. Schema giữ nguyên nên code path CDO không phải redo; chỉ đổi từ trỏ-skeleton-chung sang gọi-instance-của-mình.
+→ W12 T3 integration session: CDO call engine thật **trên platform mình**, response thật, eval E2E.
 
 ### Tóm tắt dependency thật
 
 | Khi nào | CDO depend AI? | Note |
 |---|---|---|
 | T6 W11 - T2 W12 | Không (chỉ depend endpoint URL + schema, có skeleton từ T5) | CDO build infra + integrate code path theo contract spec |
-| T3 W12 (integration session) | **CÓ** | CDO call AI endpoint thật, verify E2E. Nếu engine chưa work → cap T2-T3 buổi chấm |
+| T3 W12 (integration session) | **CÓ** | CDO call engine thật (đã deploy trên platform mình), verify E2E. Nếu engine chưa work → cap T2-T3 buổi chấm |
 | T4-T5 W12 (polish + buổi chấm) | CÓ (depend final engine quality) | AI eval + safety + multi-tenant complete |
 
 ### Tóm 1 câu
 
-> **AI define endpoint spec trước. CDO build infra theo spec, không depend logic. AI deploy skeleton T5 để CDO có endpoint thật. W12 AI thay dummy bằng real inference - URL không đổi, schema không đổi, CDO không phải redo.**
+> **AI define endpoint spec trước. CDO build infra theo spec, không depend logic. AI deploy 1 skeleton chung T5 để CDO integrate sớm. W12 mỗi CDO deploy engine thật (artifact + Deployment Contract) lên platform riêng - schema không đổi nên CDO không phải redo code path.**
 
 ---
 
