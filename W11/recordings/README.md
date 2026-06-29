@@ -1,5 +1,8 @@
 # W11 Recordings
 
+## AIO
+- [Training: AIOPS (2026-06-24)](https://shorturl.at/O2Msz)
+
 ## Soft Skills
 - [Online Training: Business Analyst – Questioning & Brief Validation (2026-06-22)](https://shorturl.at/TETPd)
 
