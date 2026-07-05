@@ -72,7 +72,7 @@ Nhóm AIO trong mỗi TF giữ **trụ AI** riêng: vận hành và cải tiến
 - Onboard: đọc packet trong `onboarding/` - [kiến trúc](onboarding/ARCHITECTURE.md), [SLO](onboarding/SLO.md), [ngân sách](onboarding/BUDGET.md), [lịch sử sự cố](onboarding/INCIDENT_HISTORY.md).
 - **Dựng baseline:** build từ source → ECR của TF → deploy chạy trên **EKS** (xem [GETTING_STARTED](GETTING_STARTED.md)). Đưa hệ thống lên sống là mốc cụ thể đầu tiên, đã tính điểm.
 - Tự đánh giá hệ thống đang chạy → dựng **backlog ưu tiên** (theo rủi ro × tác động business).
-- Cuối tuần: **Pitch bảo vệ ưu tiên** trước hội đồng (đóng vai PM/CFO/SRE lead) - hội đồng sẽ phản biện. Đây là mốc đánh giá tư duy quan trọng nhất.
+- Cuối tuần: **Pitch bảo vệ ưu tiên** trước hội đồng (đóng vai PM/CFO/SRE lead) - hội đồng sẽ phản biện. Đây là mốc đánh giá tư duy quan trọng nhất. Chi tiết cách chuẩn bị + bị vặn thế nào: [onboarding/PITCH_GUIDE.md](onboarding/PITCH_GUIDE.md).
 
 **Tuần 2-3 - Vận hành & Cải tiến dưới ràng buộc**
 - Trực **on-call** luân phiên, xử lý những gì phát sinh.
