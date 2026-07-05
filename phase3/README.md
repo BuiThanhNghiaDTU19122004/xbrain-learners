@@ -15,8 +15,9 @@ Nhiệm vụ không phải "làm bài tập". Nhiệm vụ là **vận hành s�
 | Đường dẫn | Nội dung |
 |---|---|
 | `RULES.md` | Thể lệ Phase 3 (bắt buộc đọc) |
-| `onboarding/` | Kiến trúc, SLO, ngân sách, lịch sử sự cố - hiểu hệ thống trước khi đụng vào |
+| `onboarding/` | Kiến trúc, SLO, ngân sách, lịch sử sự cố, pitch guide - hiểu hệ thống trước khi đụng vào |
 | `GETTING_STARTED.md` | Hướng dẫn build → deploy → verify |
+| `mandates/` | Directive bắt buộc BTC thả vào trong lúc vận hành (trống lúc đầu) |
 | `techx-corp-platform/` | Toàn bộ source code sản phẩm (microservice, AI review + LLM, observability) |
 | `techx-corp-chart/` | Helm chart để deploy lên Kubernetes |
 | `deploy/` | Script build/push image + các values file mẫu để deploy |

@@ -75,10 +75,14 @@ Nhóm AIO trong mỗi TF giữ **trụ AI** riêng: vận hành và cải tiến
 - Cuối tuần: **Pitch bảo vệ ưu tiên** trước hội đồng (đóng vai PM/CFO/SRE lead) - hội đồng sẽ phản biện. Đây là mốc đánh giá tư duy quan trọng nhất. Chi tiết cách chuẩn bị + bị vặn thế nào: [onboarding/PITCH_GUIDE.md](onboarding/PITCH_GUIDE.md).
 
 **Tuần 2-3 - Vận hành & Cải tiến dưới ràng buộc**
-- Trực **on-call** luân phiên, xử lý những gì phát sinh.
-- Thực thi backlog đã pitch - nhưng **không đủ thời gian làm hết**, phải chọn.
-- Chịu ràng buộc thật: ngân sách có trần, SLO có error budget, stakeholder đòi hỏi trái chiều.
-- Mỗi tuần có **Ops Review**: báo cáo trạng thái service (SLO, ngân sách, sự cố, backlog đã xử).
+
+Ba nguồn việc chạy song song:
+- **Việc tự chọn:** thực thi backlog đã pitch - **không đủ thời gian làm hết**, phải chọn.
+- **Directive từ BTC:** trong lúc vận hành, BTC có thể ban hành **yêu cầu bắt buộc toàn TF** dưới dạng memo (vd migrate database sang managed service). Thực thi trong ràng buộc, không thương lượng phạm vi. Memo sẽ xuất hiện trong [`mandates/`](mandates/) khi có hiệu lực.
+- **Sự cố:** hệ thống sẽ gặp trục trặc do BTC tạo ra - phát hiện và xử lý, giữ ảnh hưởng tới khách nhỏ nhất (không tắt cơ chế).
+
+- Trực **on-call** luân phiên. Ràng buộc thật: ngân sách có trần, SLO có error budget, stakeholder đòi hỏi trái chiều.
+- Mỗi tuần có **Ops Review**: báo cáo trạng thái service (SLO, ngân sách, sự cố, backlog + directive đã xử).
 
 **Kết thúc - Service Health Readout (điểm NHÓM)**
 - Mỗi TF trình bày: đã làm gì, đánh đổi gì, vì sao, trạng thái service ra sao, tiếp theo là gì.
