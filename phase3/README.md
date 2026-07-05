@@ -7,13 +7,15 @@ Nhiệm vụ không phải "làm bài tập". Nhiệm vụ là **vận hành s�
 ## Đọc gì trước
 
 1. **[RULES.md](RULES.md)** - thể lệ đầy đủ: cấu trúc TF, 5 trụ (Cost / Security / SLA / Scale / Auditability) + trụ AI, timeline 3 tuần, cách chấm, và **luật chơi** (đọc kỹ mục luật - có điều khoản disqualify).
-2. **[GETTING_STARTED.md](GETTING_STARTED.md)** - cách build hệ thống từ source, đẩy image lên ECR của TF, rồi deploy và kiểm tra.
+2. **[onboarding/](onboarding/)** - hiểu hệ thống bạn tiếp quản: [ARCHITECTURE](onboarding/ARCHITECTURE.md), [SLO](onboarding/SLO.md), [BUDGET](onboarding/BUDGET.md), [INCIDENT_HISTORY](onboarding/INCIDENT_HISTORY.md).
+3. **[GETTING_STARTED.md](GETTING_STARTED.md)** - cách build hệ thống từ source, đẩy image lên ECR của TF, rồi deploy và kiểm tra.
 
 ## Repo này có gì
 
 | Đường dẫn | Nội dung |
 |---|---|
 | `RULES.md` | Thể lệ Phase 3 (bắt buộc đọc) |
+| `onboarding/` | Kiến trúc, SLO, ngân sách, lịch sử sự cố - hiểu hệ thống trước khi đụng vào |
 | `GETTING_STARTED.md` | Hướng dẫn build → deploy → verify |
 | `techx-corp-platform/` | Toàn bộ source code sản phẩm (microservice, AI review + LLM, observability) |
 | `techx-corp-chart/` | Helm chart để deploy lên Kubernetes |

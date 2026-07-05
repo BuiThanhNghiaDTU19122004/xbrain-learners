@@ -68,9 +68,10 @@ Nhóm AIO trong mỗi TF giữ **trụ AI** riêng: vận hành và cải tiến
 
 ## 5. Timeline 3 tuần
 
-**Tuần 1 - Tiếp quản & Bảo vệ ưu tiên**
-- Onboard: đọc tài liệu, hiểu kiến trúc, SLO, ngân sách, lịch sử sự cố.
-- Tự đánh giá hệ thống, dựng **backlog ưu tiên** (theo rủi ro × tác động business).
+**Tuần 1 - Tiếp quản, dựng baseline & bảo vệ ưu tiên**
+- Onboard: đọc packet trong `onboarding/` - [kiến trúc](onboarding/ARCHITECTURE.md), [SLO](onboarding/SLO.md), [ngân sách](onboarding/BUDGET.md), [lịch sử sự cố](onboarding/INCIDENT_HISTORY.md).
+- **Dựng baseline:** build từ source → ECR của TF → deploy chạy trên **EKS** (xem [GETTING_STARTED](GETTING_STARTED.md)). Đưa hệ thống lên sống là mốc cụ thể đầu tiên, đã tính điểm.
+- Tự đánh giá hệ thống đang chạy → dựng **backlog ưu tiên** (theo rủi ro × tác động business).
 - Cuối tuần: **Pitch bảo vệ ưu tiên** trước hội đồng (đóng vai PM/CFO/SRE lead) - hội đồng sẽ phản biện. Đây là mốc đánh giá tư duy quan trọng nhất.
 
 **Tuần 2-3 - Vận hành & Cải tiến dưới ràng buộc**
@@ -130,9 +131,6 @@ Không chấm "code được bao nhiêu" mà chấm **6 chiều năng lực**:
 - Fair play: mọi quyết định phải truy được về người (ký tên). Không mượn kết quả của TF khác.
 - Tôn trọng ràng buộc: không vượt ngân sách, không phá SLO của nhau.
 
-## 10. Kết quả
-- **TF vận hành tốt nhất.**
-- **Cá nhân xuất sắc nhất** mỗi cohort.
-- **30 vị trí hire.**
+## 10. Lời kết
 
 Phase 3 đo đúng thứ khó dạy nhất và quan trọng nhất khi đi làm: khả năng nhìn ra vấn đề, vận hành dưới áp lực, đánh đổi có lý, và chịu trách nhiệm với quyết định của mình. Chúc các đội giữ được service khỏe và tỏa sáng.
