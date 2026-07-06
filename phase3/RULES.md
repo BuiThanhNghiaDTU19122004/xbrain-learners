@@ -25,7 +25,7 @@ Ba tầng, mỗi tầng một vai trò:
 | TF3 | AIO02 | CDO01, CDO02 |
 | TF4 | AIO01 | CDO04, CDO07, CDO08 |
 
-Mỗi TF vận hành như một mini product org, chạy song song 2 luồng: **Operate** (giữ đèn sáng - on-call, incident, SLO, fix điểm yếu) và **Build** (ship cải tiến / feature mới trên product). Build gì là do các bạn tự đánh giá hệ thống rồi đề xuất trong backlog - không có checklist phát sẵn. Nhóm CDO nghiêng về platform/hạ tầng (autoscaling, observability, security, cost, reliability qua Helm/IaC/config), nhóm AIO nghiêng về tầng AI (chất lượng, guardrail, eval, chi phí model).
+Mỗi TF vận hành như một mini product org, chạy song song 2 luồng: **Operate** (giữ đèn sáng - on-call, incident, SLO, fix điểm yếu) và **Build** (ship cải tiến / feature mới trên product). Build gì là do các bạn tự đánh giá hệ thống rồi đề xuất trong backlog - không có checklist phát sẵn. Nhóm CDO nghiêng về platform/hạ tầng (autoscaling, observability, security, cost, reliability qua Helm/IaC/config), nhóm AIO nghiêng về tầng AI theo hai hướng: **dùng AI để vận hành hệ thống** (AIOps) và **làm AI trong sản phẩm** (AIE).
 
 Trong 1 TF: các nhóm CDO lo hạ tầng/platform, nhóm AIO lo tầng AI - cùng giữ cho một service khỏe. Đây là làm việc cross-functional thật, và cũng là một tiêu chí được đánh giá.
 
@@ -45,7 +45,11 @@ Công việc CDO xoay quanh **5 trụ**:
 
 Xuyên suốt cả 5 trụ là **Operational Excellence** - vận hành hướng tới kết quả kinh doanh. Đây là xương sống của Phase 3: luồng Operate hằng ngày của bạn (on-call, ADR, Ops Review, quy mọi quyết định về khách và doanh thu). Cả TF cùng thực hành, không nhóm nào "sở hữu" riêng.
 
-Nhóm AIO giữ **trụ AI** riêng: vận hành và nâng chất tầng AI - chất lượng, an toàn (guardrail), chi phí model, độ tin cậy. Trụ AI nằm ngoài 5 trụ CDO.
+Nhóm AIO giữ **trụ AI** riêng, làm việc theo hai hướng:
+- **Dùng AI để vận hành hệ thống (AIOps)** - phát hiện bất thường, phân tích nguyên nhân sự cố, tự động hóa xử lý; dựa trên observability đang có (metrics/logs/traces).
+- **Làm AI trong sản phẩm (AIE)** - chất lượng, an toàn (guardrail), eval, chi phí model, độ tin cậy của tính năng AI.
+
+Trụ AI nằm ngoài 5 trụ CDO.
 
 **Phân trụ trong mỗi TF** (Auditability là trụ xuyên suốt mọi thay đổi, nhẹ hơn nên linh hoạt):
 
