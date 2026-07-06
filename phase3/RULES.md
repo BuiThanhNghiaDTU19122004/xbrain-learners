@@ -20,10 +20,10 @@ Ba tầng, mỗi tầng một vai trò:
 
 | TF | AIO | CDO |
 |---|---|---|
-| TF1 | AIO01 | CDO05, CDO09 |
-| TF2 | AIO02 | CDO03, CDO06 |
-| TF3 | AIO04 | CDO01, CDO02 |
-| TF4 | AIO03 | CDO04, CDO07, CDO08 |
+| TF1 | AIO03 | CDO05, CDO09 |
+| TF2 | AIO04 | CDO03, CDO06 |
+| TF3 | AIO02 | CDO01, CDO02 |
+| TF4 | AIO01 | CDO04, CDO07, CDO08 |
 
 Mỗi TF vận hành như một mini product org, chạy song song 2 luồng: **Operate** (giữ đèn sáng - on-call, incident, SLO, fix điểm yếu) và **Build** (ship cải tiến / feature mới trên product). Build gì là do các bạn tự đánh giá hệ thống rồi đề xuất trong backlog - không có checklist phát sẵn. Nhóm CDO nghiêng về platform/hạ tầng (autoscaling, observability, security, cost, reliability qua Helm/IaC/config), nhóm AIO nghiêng về tầng AI (chất lượng, guardrail, eval, chi phí model).
 
