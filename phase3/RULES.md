@@ -34,34 +34,36 @@ Ban tổ chức cấp **source code + một image seed** của một sản phẩ
 
 Hệ thống này **không hoàn hảo** - nó có sẵn những điểm chưa tối ưu về chi phí, bảo mật, độ tin cậy, khả năng mở rộng, khả năng truy vết. Nhiệm vụ của các bạn là tìm ra, ưu tiên, và xử lý chúng như một đội vận hành thật.
 
-## 4. Năm trụ + trụ AI
-Công việc CDO chia theo **5 trụ**:
+## 4. Nền Well-Architected: 5 trụ + Lens AI
+Phase 3 lấy **AWS Well-Architected Framework** làm nền - bộ tiêu chuẩn AWS dùng để đánh giá một hệ thống production có "khỏe" hay không. Công việc CDO xoay quanh **5 trụ**:
 
-1. **Cost** - tối ưu chi phí hạ tầng.
-2. **Security** - bảo mật, hardening.
-3. **SLA / SRE** - độ tin cậy, xử lý sự cố, giữ SLO.
-4. **Scale** - khả năng mở rộng, chịu tải, multi-tenant.
-5. **Auditability** - truy vết được ai làm gì, khi nào (K8s audit, cloud trail, change management, log integrity).
+1. **Security** - bảo vệ hệ thống, dữ liệu và danh tính: hardening, least-privilege, phát hiện và chặn xâm nhập.
+2. **Reliability** - giữ lời hứa SLA qua mọi sự cố: chịu lỗi, tự phục hồi, giữ SLO.
+3. **Performance Efficiency** - đúng tài nguyên cho đúng tải: chịu tải, scale, multi-tenant, tối ưu độ trễ.
+4. **Cost Optimization** - mỗi đô chi ra phải đáng: right-size, spot, cắt lãng phí trong khi giữ SLA.
+5. **Auditability** - truy được ai làm gì và khi nào: K8s audit, CloudTrail, change management, log integrity.
 
-Nhóm AIO trong mỗi TF giữ **trụ AI** riêng: vận hành và cải tiến tầng AI (chất lượng, chi phí, bảo mật, độ tin cậy của tính năng AI). Trụ AI không nằm trong 5 trụ CDO dưới đây.
+Xuyên suốt cả 5 trụ là **Operational Excellence** - vận hành hướng tới kết quả kinh doanh. Đây là linh hồn của Phase 3: luồng Operate hằng ngày của bạn (on-call, ADR, Ops Review, quy mọi quyết định về khách và doanh thu) chính là Operational Excellence trong Well-Architected. Không nhóm nào "sở hữu" trụ này - cả TF cùng thực hành.
 
-**Phân trụ trong mỗi TF** (Auditability là trụ linh hoạt vì nó nhẹ hơn và xuyên suốt mọi thay đổi):
+Nhóm AIO giữ **Lens AI** (theo GenAI/ML Lens của Well-Architected): vận hành và nâng chất tầng AI - chất lượng, an toàn (guardrail), chi phí model, độ tin cậy. Lens AI nằm ngoài 5 trụ CDO.
+
+**Phân trụ trong mỗi TF** (Auditability là trụ xuyên suốt mọi thay đổi, nhẹ hơn nên linh hoạt):
 
 *TF có 2 nhóm CDO* - mỗi nhóm 2 trụ core, Auditability chung:
 | Nhóm | Trụ |
 |---|---|
-| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost + Scale) |
-| Nhóm B | 2 trụ core còn lại (Security + SLA) |
+| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost Optimization + Performance Efficiency) |
+| Nhóm B | 2 trụ core còn lại (Security + Reliability) |
 | Cả hai | Auditability (luân phiên, mỗi tuần 1 nhóm cầm chính) |
 
 *TF có 3 nhóm CDO* - chia 2+2+1:
 | Nhóm | Trụ |
 |---|---|
-| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost + Security) |
-| Nhóm B | 2 trụ core còn lại (SLA + Scale) |
+| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost Optimization + Security) |
+| Nhóm B | 2 trụ core còn lại (Reliability + Performance Efficiency) |
 | Nhóm C | Auditability (đào sâu 1 mảng) |
 
-**Pick (draft):** thứ tự theo hạng Phase 2, nhóm dẫn đầu chọn trước; snake draft trên 4 trụ core, chọn từng trụ một. Được chọn trụ mình muốn là phần thưởng cho nhóm dẫn đầu.
+**Pick (draft):** thứ tự theo hạng Phase 2, nhóm dẫn đầu chọn trước; snake draft trên **4 trụ core** (Security, Reliability, Performance Efficiency, Cost Optimization), chọn từng trụ một. Được chọn trụ mình muốn là phần thưởng cho nhóm dẫn đầu.
 
 **Tĩnh để sở hữu, xoay để trực:** home-pillar là chủ sở hữu chính (giữ tính liên tục + trách nhiệm). Nhưng khi **on-call trực, bạn xử lý bất kỳ trụ nào ập tới** (sự cố cost, security, hay audit đều vào người trực). Rotation này đảm bảo mọi người chạm đủ mọi mảng trong lúc vận hành.
 
