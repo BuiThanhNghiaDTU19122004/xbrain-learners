@@ -1,5 +1,6 @@
 # W7 Recordings
 
-Workshop recordings for the W7 Capstone Hackathon week will be added here after the live sessions.
-
-Check back after Wed 28/5 for the kick-off recording.
+## Group Presentations — Capstone Hackathon (2026-05-29)
+- **Focus Group 1** — Nam Hồng: [Part 1](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/HACKATHON%20Focus%20Group%201_anh%20Nam%20H%E1%BB%93ng-20260529.mp4?csf=1&web=1&e=Pswx4t) · [Part 2](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/HACKATHON%20Focus%20Group%201_anh%20Nam%20H%E1%BB%93ng-20260529%20%282%29.mp4?csf=1&web=1&e=PJsTnI)
+- **Focus Group 2** — Gia Hưng & Lộc: [Part 1](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/Hackathon_Focus%20group%202%20Gia%20H%C6%B0ng%20%26%20L%E1%BB%99c-20260529.mp4?csf=1&web=1&e=mrRHuz) · [Part 2](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/Hackathon_Focus%20group%202%20Gia%20H%C6%B0ng%20%26%20L%E1%BB%99c-20260529%20%282%29.mp4?csf=1&web=1&e=NxD6Zv)
+- **Focus Group 3** — Toàn & Nghĩa: [Part 1](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/Hackathon_Focus%20group%203_To%C3%A0n%20%26%20Ngh%C4%A9a-20260529.mp4?csf=1&web=1&e=KlX9N0) · [Part 2](https://synaptixio.sharepoint.com/:v:/r/sites/XBrainDocumentHub/Xbrain%20x%20AWS%20Accelerator%20Program/Hackathon_Focus%20group%203_To%C3%A0n%20%26%20Ngh%C4%A9a-20260529%20%282%29.mp4?csf=1&web=1&e=XlzMaw)
