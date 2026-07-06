@@ -40,11 +40,10 @@ Họ vặn theo vai để stress-test tư duy và khả năng bảo vệ quyết
 
 Bị vặn là bình thường và được mong đợi. Điều được nhìn là bạn **giữ được lập luận, có số liệu, và điều chỉnh hợp lý khi bị phản biện** - hay lúng túng và bảo vệ bằng cảm tính.
 
-## Được đánh giá thế nào
+## Cái gì làm nên một pitch tốt
 
-- Đây là **checkpoint của cả NHÓM** - nhóm trình, ra tín hiệu nhóm. Buổi pitch **không** cho ra điểm cá nhân ngay tại phòng.
-- Nhưng **2 mentor chấm của TF quan sát** cách từng người tham gia và phản hồi khi bị vặn, ghi vào scorecard cá nhân (kênh điểm riêng - xem RULES mục 8).
-- Chấm **tư duy, không chấm slide đẹp**: chọn đúng việc đáng làm, quy được về rủi ro × business, đánh đổi rõ ràng, bảo vệ được dưới áp lực.
+- Đây là buổi của cả **nhóm** - cùng trình, cùng bảo vệ.
+- Điều được nhìn là **tư duy, không phải slide đẹp**: chọn đúng việc đáng làm, quy được về rủi ro × business, đánh đổi rõ ràng, và giữ được lập luận khi bị vặn.
 
 ## Vì sao quan trọng nhất
 

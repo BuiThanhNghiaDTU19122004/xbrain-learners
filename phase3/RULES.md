@@ -14,8 +14,7 @@ Ba tầng, mỗi tầng một vai trò:
 |---|---|---|
 | Vận hành / thi đấu | **4 Task Force (TF)** | Mỗi TF cùng vận hành 1 service trên 1 account riêng |
 | Kèm cặp | **13 nhóm** (9 CDO + 4 AIO) | Mỗi nhóm **1 mentor kèm cặp**, theo sát cả kỳ |
-| Chấm cá nhân | **4 TF** | Mỗi TF **2 mentor chấm**, chấm điểm cá nhân độc lập (double-blind) trên toàn TF |
-| Tổng hợp / quyết định | **Ban tổ chức** | Tổng hợp điểm, chọn hire |
+| Tổng hợp / quyết định | **Ban tổ chức** | Theo dõi, tổng hợp, quyết định kết quả |
 
 **Chia TF** (mỗi TF = 1 nhóm AIO + 2-3 nhóm CDO):
 
@@ -64,7 +63,7 @@ Nhóm AIO trong mỗi TF giữ **trụ AI** riêng: vận hành và cải tiến
 
 **Pick (draft):** thứ tự theo hạng Phase 2, nhóm dẫn đầu chọn trước; snake draft trên 4 trụ core, chọn từng trụ một. Được chọn trụ mình muốn là phần thưởng cho nhóm dẫn đầu.
 
-**Tĩnh để sở hữu, xoay để đánh giá:** home-pillar là chủ sở hữu chính (giữ tính liên tục + trách nhiệm). Nhưng khi **on-call trực, bạn xử lý bất kỳ trụ nào ập tới** (sự cố cost, security, hay audit đều vào người trực). Rotation này đảm bảo mọi người lộ đủ năng lực - đây là cái ban tổ chức dùng để so sánh khi chọn hire.
+**Tĩnh để sở hữu, xoay để trực:** home-pillar là chủ sở hữu chính (giữ tính liên tục + trách nhiệm). Nhưng khi **on-call trực, bạn xử lý bất kỳ trụ nào ập tới** (sự cố cost, security, hay audit đều vào người trực). Rotation này đảm bảo mọi người chạm đủ mọi mảng trong lúc vận hành.
 
 ## 5. Timeline 3 tuần
 
@@ -84,10 +83,9 @@ Ba nguồn việc chạy song song:
 - Trực **on-call** luân phiên. Ràng buộc thật: ngân sách có trần, SLO có error budget, stakeholder đòi hỏi trái chiều.
 - Mỗi tuần có **Ops Review**: báo cáo trạng thái service (SLO, ngân sách, sự cố, backlog + directive đã xử).
 
-**Kết thúc - Service Health Readout (điểm NHÓM)**
+**Kết thúc - Service Health Readout**
 - Mỗi TF trình bày: đã làm gì, đánh đổi gì, vì sao, trạng thái service ra sao, tiếp theo là gì.
-- Hội đồng **chỉ nghe và phản biện (bắt bẻ)** - phản biện nhắm vào quyết định và trạng thái service của cả đội. Có thể hỏi thẳng một cá nhân để kiểm chứng chiều sâu, nhưng **không công bố hay chấm điểm cá nhân trong phòng**.
-- **Điểm đầu ra của buổi này là điểm NHÓM/TF**, không phải điểm cá nhân. Cách một người phản hồi khi bị bắt bẻ chỉ là một quan sát để **2 mentor chấm của TF** ghi vào scorecard cá nhân (kênh riêng, mục 8) - không thành một con điểm ngay tại pitch.
+- Hội đồng **nghe và phản biện (bắt bẻ)** - nhắm vào quyết định và trạng thái service của cả đội, có thể hỏi thẳng một cá nhân để kiểm chứng chiều sâu.
 
 ## 6. Nhịp vận hành
 - **Standup mỗi ngày**: báo trạng thái, bàn giao ca on-call. Mentor của nhóm theo sát.
@@ -99,35 +97,9 @@ Ba nguồn việc chạy song song:
 - **Decision log / ADR ký tên** cho mọi quyết định lớn.
 - **Postmortem / COE ký tên** sau mỗi sự cố.
 - **Ops Review** hằng tuần.
-- **Service Health Readout** cuối kỳ (chấm điểm NHÓM; hội đồng nghe + bắt bẻ, có thể hỏi thẳng cá nhân để kiểm chứng nhưng không chấm điểm cá nhân trong phòng).
+- **Service Health Readout** cuối kỳ (trình bày trước hội đồng + trả lời phản biện).
 
-## 8. Cách chấm & chọn hire
-Không chấm "code được bao nhiêu" mà chấm **6 chiều năng lực**:
-1. Judgment & ưu tiên (chọn đúng việc đáng làm).
-2. Engineering & Ops excellence (xử lý đúng gốc, không tạo lỗi mới).
-3. Product & business trade-off (quy quyết định về chi phí, khách hàng).
-4. AI Engineering (AIO) / Reliability (CDO).
-5. Communication (postmortem, quản lý stakeholder).
-6. Leadership / ownership.
-
-**Hai kênh điểm TÁCH RỜI - không trộn trong phòng pitch:**
-
-| Kênh | Nguồn điểm | Ai chấm | Dùng để |
-|---|---|---|---|
-| **NHÓM** | Ops Review hằng tuần + Service Health Readout cuối + sức khỏe service đo được (SLO, xử incident, cải tiến) | Hội đồng - chỉ nghe + bắt bẻ | Xếp hạng 4 TF/nhóm |
-| **CÁ NHÂN** | Quan sát liên tục 3 tuần: ca on-call, ADR/decision log ký tên, COE, standup, cách xử lý khi bị bắt bẻ | **2 mentor/TF, chấm ĐỘC LẬP** rồi đối chiếu | Quyết định hire |
-
-**Hai vai mentor tách biệt:**
-- **Mentor kèm nhóm** (1/nhóm, 13 người): theo sát, kèm cặp, gỡ vướng cho nhóm mình cả kỳ. **Không phải người chốt điểm cá nhân** - chỉ cung cấp quan sát.
-- **Mentor chấm** (2/TF, 8 người): chấm điểm cá nhân toàn TF trên **một thang chung** để so sánh công bằng trong TF, dựa trên quan sát cả kỳ + input từ mentor kèm nhóm + on-call/ADR/COE.
-
-- **Điểm cá nhân KHÔNG lấy từ buổi pitch.** Buổi pitch cho ra điểm nhóm; điểm cá nhân đến từ việc-làm-thật cả kỳ.
-- **2 mentor/TF chấm độc lập** (double-blind): mỗi mentor điền scorecard riêng, không thấy điểm người kia. Lệch > 1.0 ở một tiêu chí thì họp reconcile; điểm cuối là trung bình sau reconcile. Ban tổ chức tổng hợp.
-- **Vì sao tách:** (1) chấm cá nhân ngay trong pitch sẽ đẩy người ta cướp mic, present để ăn điểm; (2) tách vai kèm cặp khỏi vai chấm để mentor kèm nhóm không thiên vị nhóm mình. Cả nhóm cùng lo readout tốt (điểm nhóm), điểm cá nhân do 2 mentor/TF chấm trên thang chung.
-
-**Chọn hire:** xếp hạng cá nhân **trong từng cohort** (CDO so với CDO, AIO so với AIO), phân bổ theo tỉ lệ sĩ số hai cohort. Tổng: **30 vị trí**.
-
-## 9. Luật chơi
+## 8. Luật chơi
 - **Tự build từ source ban tổ chức cấp → đẩy image lên ECR của TF → deploy trên account của TF.**
 - **Sự cố là để xử lý, không phải để tắt.** Cơ chế tạo sự cố do ban tổ chức kiểm soát. **Nghiêm cấm** can thiệp, vô hiệu hóa, hay đổi hướng cơ chế này. Vi phạm = **loại khỏi vòng đánh giá (disqualify)**.
 - **Đường dây đọc flag là hạ tầng được bảo vệ.** flagd và các hook OpenFeature có sẵn trong service lõi chính là cách ban tổ chức bơm sự cố vào hệ thống của bạn. Gỡ bỏ, vô hiệu, hay refactor để service không còn đọc flag incident nữa được xem như đổi hướng cơ chế sự cố - **disqualify** ngang với re-point flagd. Muốn chịu được sự cố thì làm hệ thống bền hơn (fallback, retry, containment), không tháo đường dây đang có. Bạn vẫn được tự thêm flag/feature mới của mình.
@@ -135,6 +107,6 @@ Không chấm "code được bao nhiêu" mà chấm **6 chiều năng lực**:
 - Fair play: mọi quyết định phải truy được về người (ký tên). Không mượn kết quả của TF khác.
 - Tôn trọng ràng buộc: không vượt ngân sách, không phá SLO của nhau.
 
-## 10. Lời kết
+## 9. Lời kết
 
 Phase 3 đo đúng thứ khó dạy nhất và quan trọng nhất khi đi làm: khả năng nhìn ra vấn đề, vận hành dưới áp lực, đánh đổi có lý, và chịu trách nhiệm với quyết định của mình. Chúc các đội giữ được service khỏe và tỏa sáng.
