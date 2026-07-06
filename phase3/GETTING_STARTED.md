@@ -107,7 +107,7 @@ kubectl -n $NS port-forward svc/frontend-proxy 8080:8080
 Hệ thống dùng `flagd` để bật/tắt các nhánh hành vi. Trong Phase 3, **nguồn flag do BTC giữ tập trung**: flagd của TF được cấu hình **sync read-only** từ một endpoint trung tâm qua `values-flagd-sync.yaml`. BTC sẽ cấp cho TF một `TOKEN` để điền vào file này (thay `<TOKEN>`).
 
 - Đây là cách BTC bơm sự cố vào hệ thống của bạn trong lúc vận hành. Việc của bạn là **làm hệ thống chịu được** (fallback, retry, containment), không phải tắt flagd.
-- **Không** gỡ, đổi hướng, hay vô hiệu hóa flagd và các hook đọc flag trong service. Đây là hạ tầng được bảo vệ - vi phạm = disqualify (RULES mục 9). BTC có kiểm tra định kỳ.
+- **Không** gỡ, đổi hướng, hay vô hiệu hóa flagd và các hook đọc flag trong service. Đây là hạ tầng được bảo vệ - vi phạm = disqualify (xem RULES - mục Luật chơi). BTC có kiểm tra định kỳ.
 
 ## Sự cố thường gặp khi dựng
 

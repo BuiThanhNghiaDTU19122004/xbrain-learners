@@ -35,35 +35,39 @@ Ban tổ chức cấp **source code + một image seed** của một sản phẩ
 Hệ thống này **không hoàn hảo** - nó có sẵn những điểm chưa tối ưu về chi phí, bảo mật, độ tin cậy, khả năng mở rộng, khả năng truy vết. Nhiệm vụ của các bạn là tìm ra, ưu tiên, và xử lý chúng như một đội vận hành thật.
 
 ## 4. Nền Well-Architected: 5 trụ + Lens AI
-Phase 3 lấy **AWS Well-Architected Framework** làm nền - bộ tiêu chuẩn AWS dùng để đánh giá một hệ thống production có "khỏe" hay không. Công việc CDO xoay quanh **5 trụ**:
+Phase 3 lấy **AWS Well-Architected Framework** làm nền - bộ tiêu chuẩn AWS dùng để đánh giá một hệ thống production có "khỏe" hay không. Framework có 6 trụ; Phase 3 dùng **5 trụ**, riêng **Sustainability chưa nằm trong phạm vi** đợt này.
 
-1. **Security** - bảo vệ hệ thống, dữ liệu và danh tính: hardening, least-privilege, phát hiện và chặn xâm nhập.
+**Operational Excellence** là **xương sống** - chạy xuyên suốt 3 tuần và cả 4 trụ còn lại. Đây là cách bạn vận hành để tạo ra kết quả kinh doanh: on-call, ADR, Ops Review, quy mọi quyết định về khách và doanh thu. Cả TF cùng thực hành, không nhóm nào "sở hữu" riêng.
+
+Bốn trụ còn lại là mảng CDO tự chọn và đào sâu:
+
+1. **Security** - bảo vệ hệ thống, dữ liệu và danh tính: hardening, least-privilege, phát hiện & chặn xâm nhập, và truy vết/audit (CloudTrail, K8s audit, log integrity).
 2. **Reliability** - giữ lời hứa SLA qua mọi sự cố: chịu lỗi, tự phục hồi, giữ SLO.
 3. **Performance Efficiency** - đúng tài nguyên cho đúng tải: chịu tải, scale, multi-tenant, tối ưu độ trễ.
 4. **Cost Optimization** - mỗi đô chi ra phải đáng: right-size, spot, cắt lãng phí trong khi giữ SLA.
-5. **Auditability** - truy được ai làm gì và khi nào: K8s audit, CloudTrail, change management, log integrity.
 
-Xuyên suốt cả 5 trụ là **Operational Excellence** - vận hành hướng tới kết quả kinh doanh. Đây là linh hồn của Phase 3: luồng Operate hằng ngày của bạn (on-call, ADR, Ops Review, quy mọi quyết định về khách và doanh thu) chính là Operational Excellence trong Well-Architected. Không nhóm nào "sở hữu" trụ này - cả TF cùng thực hành.
+Nhóm AIO giữ **Lens AI** (theo GenAI/ML Lens của Well-Architected): vận hành và nâng chất tầng AI - chất lượng, an toàn (guardrail), chi phí model, độ tin cậy.
 
-Nhóm AIO giữ **Lens AI** (theo GenAI/ML Lens của Well-Architected): vận hành và nâng chất tầng AI - chất lượng, an toàn (guardrail), chi phí model, độ tin cậy. Lens AI nằm ngoài 5 trụ CDO.
+> **Auditability & Governance** (truy vết ai làm gì và khi nào, change management, log integrity) không phải một trụ riêng của Well-Architected - nó nằm trong **Security** (detective controls) và **Operational Excellence** (change management). Phase 3 vẫn coi đây là một mảng đáng đào sâu.
 
-**Phân trụ trong mỗi TF** (Auditability là trụ xuyên suốt mọi thay đổi, nhẹ hơn nên linh hoạt):
+**Phân trụ trong mỗi TF:**
 
-*TF có 2 nhóm CDO* - mỗi nhóm 2 trụ core, Auditability chung:
+*TF có 2 nhóm CDO* - mỗi nhóm 2 trụ:
 | Nhóm | Trụ |
 |---|---|
-| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost Optimization + Performance Efficiency) |
-| Nhóm B | 2 trụ core còn lại (Security + Reliability) |
-| Cả hai | Auditability (luân phiên, mỗi tuần 1 nhóm cầm chính) |
+| Nhóm A (winner Phase 2) | 2 trụ tự chọn (vd Cost Optimization + Performance Efficiency) |
+| Nhóm B | 2 trụ còn lại (Security + Reliability) |
 
-*TF có 3 nhóm CDO* - chia 2+2+1:
+Auditability/governance là mối quan tâm chung nằm trong Security + Operational Excellence - cả hai nhóm cùng giữ.
+
+*TF có 3 nhóm CDO* - 2 nhóm ôm 4 trụ, nhóm thứ ba chuyên Governance:
 | Nhóm | Trụ |
 |---|---|
-| Nhóm A (winner Phase 2) | 2 trụ core tự chọn (vd Cost Optimization + Security) |
-| Nhóm B | 2 trụ core còn lại (Reliability + Performance Efficiency) |
-| Nhóm C | Auditability (đào sâu 1 mảng) |
+| Nhóm A (winner Phase 2) | 2 trụ tự chọn (vd Cost Optimization + Security) |
+| Nhóm B | 2 trụ còn lại (Reliability + Performance Efficiency) |
+| Nhóm C | Đào sâu **Auditability & Governance** (lát cắt xuyên Security + Operational Excellence) |
 
-**Pick (draft):** thứ tự theo hạng Phase 2, nhóm dẫn đầu chọn trước; snake draft trên **4 trụ core** (Security, Reliability, Performance Efficiency, Cost Optimization), chọn từng trụ một. Được chọn trụ mình muốn là phần thưởng cho nhóm dẫn đầu.
+**Pick (draft):** thứ tự theo hạng Phase 2, nhóm dẫn đầu chọn trước; snake draft trên 4 trụ, chọn từng trụ một. Được chọn trụ mình muốn là phần thưởng cho nhóm dẫn đầu.
 
 **Tĩnh để sở hữu, xoay để trực:** home-pillar là chủ sở hữu chính (giữ tính liên tục + trách nhiệm). Nhưng khi **on-call trực, bạn xử lý bất kỳ trụ nào ập tới** (sự cố cost, security, hay audit đều vào người trực). Rotation này đảm bảo mọi người chạm đủ mọi mảng trong lúc vận hành.
 

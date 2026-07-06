@@ -31,7 +31,7 @@ Sau khi hệ thống chạy: đọc kiến trúc, hiểu SLO/ngân sách/lịch 
 ## Vài điều cần nhớ
 
 - **Mỗi TF tự build image → đẩy lên ECR của account mình → deploy trên account của mình.** BTC cấp source + một image seed để khởi động.
-- **Sự cố sẽ đến trong lúc vận hành.** Nhiệm vụ là phát hiện và xử lý để khách hàng ít bị ảnh hưởng nhất - **không phải tắt nó đi**. Cơ chế tạo sự cố do BTC kiểm soát; can thiệp/vô hiệu hóa nó = disqualify (xem RULES mục 9).
+- **Sự cố sẽ đến trong lúc vận hành.** Nhiệm vụ là phát hiện và xử lý để khách hàng ít bị ảnh hưởng nhất - **không phải tắt nó đi**. Cơ chế tạo sự cố do BTC kiểm soát; can thiệp/vô hiệu hóa nó = disqualify (xem RULES - mục Luật chơi).
 - **Mọi quyết định phải truy được về người** (ADR / decision log ký tên). Đây là thứ được chấm.
 
 Chúc các đội giữ được service khỏe và tỏa sáng.
